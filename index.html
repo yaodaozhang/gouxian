@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>狗仙网</title>
+		<!--//插入vue-->
+		<script type="text/javascript" src="js/vue.js" ></script>
+	</head>
+	<body>
+		<div id="app">
+			<img src="img/heihei.jpg" /> 
+			<h1>{{name}}</h1>
+			<hr/>
+			
+			<!--<div v-text="like"></div>-->  <!--识别标签，但同时带有标签符号-->
+			<div v-html="like"></div>  <!--识别标签，但不显示标签符号-->
+			
+			<p v-if="off">大仙是条职业单身狗</p>
+			<p v-else>大仙是条单身狗</p>
+						<audio controls>
+			  <source src="horse.ogg" type="audio/ogg">
+			  <source src="http://m10.music.126.net/20230310100120/251724fb9fdf45c97a120618d2c8f8ae/ymusic/cd80/0424/6dee/489429b62c45570e55da59ac5a889614.mp3" type="audio/mpeg">
+			  您的浏览器不支持 audio 元素。
+			</audio>
+			<div v-show="off">今天是单身狗的工作日</div>
+		</div>
+		
+			<script type="text/javascript" >
+			let vm=new Vue({
+				el:"#app",
+				data:{
+					name:"小狗",
+					like:"<h1>火烧情侣</h1>",
+					age:20,
+					off:0
+				}
+			})
+		</script>
+		
+	</body>
+</html>
